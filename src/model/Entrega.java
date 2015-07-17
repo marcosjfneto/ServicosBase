@@ -24,7 +24,7 @@ public class Entrega {
 	private String observacao;
 
 	public Entrega(){
-		SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 		this.dataCadastro = formatador.format(
 				Calendar.getInstance().getTime() );
 		this.ordemEntrega = 0;

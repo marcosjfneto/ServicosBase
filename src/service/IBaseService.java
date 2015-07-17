@@ -7,13 +7,11 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 
+import model.Entrega;
+
 @WebService
 @SOAPBinding(style = Style.RPC)
 public interface IBaseService {
-	//data formato yyyy-MM-dd
-	 
-		@WebMethod float soma(float num1, float num2);
-		
 
 		//  cliente
 		@WebMethod String getStatusEntrega(int idEntrega);
@@ -24,7 +22,8 @@ public interface IBaseService {
 		@WebMethod String setEntregaConcluida(int idVenda);
 
 		//	Vendedor
-		@WebMethod String cadastrarEntrega(String entregaJSOM);
+//		@WebMethod String cadastrarEntrega(String entregaJSOM);
+		@WebMethod String cadastrarEntrega(Entrega entrega);
 //		@WebMethod String cadastrarEntrega(int idEntrega, String informVenda);
 
 		//	Gerente (gerencia as entregas)
@@ -33,6 +32,7 @@ public interface IBaseService {
 		@WebMethod String getEntregasNaoConcluidas();
 		@WebMethod String getEntregasNaoAgendadas();
 		@WebMethod String remarcarEntrega(int idVenda, String data);
+		@WebMethod String cancelarEntrega(int idVenda, String motivo);
 //		
 
 }
