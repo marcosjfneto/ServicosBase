@@ -43,11 +43,10 @@ public class EntregaDAO extends Conexao {
 			
 			st.setInt(13, entrega.getOrdemEntrega());
 			
-			boolean result = st.execute();
-			System.out.println("dao cadastrou");
+			st.execute();
 			
 			st.close();
-			return String.valueOf(result);
+			return "true";
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -68,7 +67,6 @@ public class EntregaDAO extends Conexao {
 	//	Gerente (gerencia as entregas)
 	public boolean agendarEntrega(int id_venda, String data){
 		String sql = "UPDATE entrega SET data_entrega=?, status=? WHERE id_venda = ?";
-
 		int resultado = 0;
 		try {
 			PreparedStatement st = conexao.prepareStatement(sql);
@@ -284,7 +282,7 @@ public class EntregaDAO extends Conexao {
 		entrega.setId_entrega(rs.getInt("id_entrega"));
 		entrega.setId_venda(rs.getInt("id_venda"));
 
-		entrega.setNome_cliente(rs.getString("nome_cliente"));
+		entrega.setNomeCliente(rs.getString("nome_cliente"));
 		entrega.setCpf(rs.getString("cpf"));
 		entrega.setTelefone(rs.getString("telefone"));
 

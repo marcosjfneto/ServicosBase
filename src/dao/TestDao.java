@@ -27,7 +27,7 @@ public class TestDao {
 		entrega.setEndereco(end);
 		entrega.setId_venda(idVenda);
 		entrega.setMelhorHorario(horario);
-		entrega.setNome_cliente(cliente);
+		entrega.setNomeCliente(cliente);
 		entrega.setProduto(produto);
 		entrega.setTelefone(telefone);
 		entrega.setCpf(cpf);

@@ -10,7 +10,7 @@ public class Entrega {
 	private int id_entrega;
 	private int id_venda;
 
-	private String nome_cliente;
+	private String nomeCliente;
 	private String telefone;
 	private String cpf;
 	private String status;
@@ -28,7 +28,7 @@ public class Entrega {
 		this.dataCadastro = formatador.format(
 				Calendar.getInstance().getTime() );
 		this.ordemEntrega = 0;
-		this.nome_cliente = ""; 
+		this.nomeCliente = ""; 
 		this.telefone = ""; 
 		this.cpf = "";
 		this.status = ""; 
@@ -44,7 +44,7 @@ public class Entrega {
 		Entrega entrega = new Gson().fromJson(json, Entrega.class);
 	
 		this.ordemEntrega = entrega.getOrdemEntrega();
-		this.nome_cliente = entrega.getNomeCliente(); 
+		this.nomeCliente = entrega.getNomeCliente(); 
 		this.telefone = entrega.getTelefone(); 
 		this.cpf = entrega.getCpf();
 		this.status = entrega.getStatus(); 
@@ -73,11 +73,11 @@ public class Entrega {
 	}
 
 	public String getNomeCliente() {
-		return nome_cliente;
+		return nomeCliente;
 	}
 
-	public void setNome_cliente(String nome_cliente) {
-		this.nome_cliente = nome_cliente;
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
 
 	public String getTelefone() {
@@ -170,24 +170,25 @@ public class Entrega {
 
 	public void imprimir(){
 		System.out.println(
-				"nome_cliente: " + nome_cliente +
-				"telefone: " + telefone +
-				"cpf: " + cpf +
-				"status: " + status +
-				"melhorHorario: " + melhorHorario +
-				"endereco: " + endereco + 
-				"dataCadastro: " + dataCadastro +
-				"dataEntrega: " + dataEntrega +
-				"produto: " + produto +
-				"entregador: " + entregador +
-				"ordemEntrega: " + ordemEntrega 
+				"nomeCliente: " + nomeCliente +
+				"\ntelefone: " + telefone +
+				"\nid_venda: " + id_venda +
+				"\ncpf: " + cpf +
+				"\nstatus: " + status +
+				"\nmelhorHorario: " + melhorHorario +
+				"\nendereco: " + endereco + 
+				"\ndataCadastro: " + dataCadastro +
+				"\ndataEntrega: " + dataEntrega +
+				"\nproduto: " + produto +
+				"\nentregador: " + entregador +
+				"\nordemEntrega: " + ordemEntrega 
 				);
 	}
 	
 	public String toJson(){
 		return new Gson().toJson(this);
 //		return (
-//		"{nome_cliente: " + nome_cliente +
+//		"{nomeCliente: " + nomeCliente +
 //		", telefone: " + telefone +
 //		", cpf: " + cpf +
 //		", status: " + status +
